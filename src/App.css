@@ -1,38 +1,321 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap");
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 0.7% 0 0.6% 0;
+  background: #303030;
+}
+.line-header-bottom {
+  position: relative;
+  background: #afd5df;
+  height: 6px;
+  box-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+  width: 100%;
+  z-index: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-box {
+  margin: 5% 0 5%;
+  z-index: 1;
+  /* animation: glow 1s ease-in-out infinite alternate; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-pic {
+  width: 250px;
+  cursor: pointer;
+  transition: 0.4s ease-in;
+  animation: toLogo 1.7s linear;
+}
+.logo-pic:hover {
+}
+
+.start-box {
+  background-image: url(../src/assets/star-wars.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: border-box;
+  background-size: cover;
+}
+.start-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* .fade {
+  position: relative;
+  width: 100%;
+  top: -25px;
+  z-index: -1;
+} */
+
+.star-wars {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 1000px;
+  font-family: "Zilla Slab", serif;
+  font-size: 550%;
+  font-weight: 900;
+  letter-spacing: 6px;
+  line-height: 100%;
+  perspective: 300px;
+  text-align: justify;
+  box-sizing: border-box;
+  color: #afd5df;
+  text-shadow: 0px 5px 1px rgba(0, 0, 0, 0.25);
+  user-select: none;
+}
+
+.crawl {
+  position: relative;
+  top: -22222px;
+  transform-origin: 50% 70%;
+  animation: crawl 1.2s linear;
+  animation-iteration-count: 1;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+  padding: 100px 10% 0 10%;
+}
+
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 100); */
+}
+
+.crawl > .title h1 {
+  margin: 0 0 100px;
+  text-transform: uppercase;
+  color: #afd5df;
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 100); */
+}
+
+.crawl > .title p {
+  color: #afd5df;
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 100); */
+}
+
+@keyframes crawl {
+  0% {
+    top: 0px;
+    transform: rotateX(70deg) translateZ(0);
   }
+  50% {
+    opacity: 0%;
+  }
+  60% {
+    opacity: 0%;
+  }
+
+  100% {
+    top: -4000px;
+    transform: rotateX(0deg) translateY(30px) translateZ(0);
+    top: 0px;
+    opacity: 100%;
+    font-size: 0.4em;
+    line-height: 130%;
+    width: 750px;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
+      0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
   to {
-    transform: rotate(360deg);
+    box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes toLogo {
+  0% {
+    transform: scale(0.2);
+    opacity: 0%;
+  }
+
+  50% {
+    transform: scale(0.3);
+    opacity: 50%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+button {
+  padding: 0;
+}
+
+.start-btm-box {
+  display: flex;
+  background: #afd5df;
+  justify-content: space-evenly;
+  justify-items: center;
+  padding-top: 2px;
+}
+.btm-persons {
+  background: transparent;
+  width: 150px;
+  cursor: pointer;
+  font-family: Zilla Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  color: #073442;
+  user-select: none;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+.btm-persons:hover {
+  color: #afd5df;
+  text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+}
+.btm-planets {
+  background: transparent;
+  width: 150px;
+  cursor: pointer;
+  font-family: Zilla Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  color: #073442;
+  user-select: none;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+.btm-planets:hover {
+  color: #afd5df;
+  text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+}
+.btm-favourites {
+  background: transparent;
+  width: 150px;
+  cursor: pointer;
+  font-family: Zilla Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  color: #073442;
+  user-select: none;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in;
+  z-index: 1;
+}
+.btm-favourites:hover {
+  color: #afd5df;
+  text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+}
+
+@media (max-width: 400px) {
+  .start-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .logo-box {
+    margin: 20% 0 10%;
+  }
+  .logo-pic {
+    width: 180px;
+  }
+  .star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 1000px;
+    font-family: "Zilla Slab", serif;
+    font-size: 350%;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 100%;
+    perspective: 300px;
+    text-align: justify;
+    box-sizing: border-box;
+    color: #afd5df;
+    text-shadow: 0px 5px 1px rgba(0, 0, 0, 0.25);
+    user-select: none;
+    transform: rotateX(0deg) translateY(-70px) translateZ(0);
+  }
+  .start-btm-box {
+    display: flex;
+    background: #afd5df;
+    justify-content: space-evenly;
+    justify-items: center;
+    padding-top: 2px;
+  }
+  .btm-persons {
+    background: transparent;
+    width: 100px;
+    cursor: pointer;
+    font-family: Zilla Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 35px;
+    color: #3b6d84;
+    user-select: none;
+    border: none;
+    outline: none;
+  }
+  .btm-planets {
+    background: transparent;
+    width: 100px;
+    cursor: pointer;
+    font-family: Zilla Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 35px;
+    color: #3b6d84;
+    user-select: none;
+    border: none;
+    outline: none;
+  }
+  .btm-favourites {
+    background: transparent;
+    width: 100px;
+    cursor: pointer;
+    font-family: Zilla Slab;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 35px;
+    color: #3b6d84;
+    user-select: none;
+    border: none;
+    outline: none;
   }
 }
