@@ -3,13 +3,6 @@ import "../App.css";
 
 const Start = () => (
   <div className="start-box">
-    <div className="line-header-bottom"></div>
-    <div className="start-btm-box">
-      <button className="btm-persons">PERSONS</button>
-      <button className="btm-planets">PLANETS</button>
-      <button className="btm-favourites">FAVOURITES</button>
-    </div>
-    <div className="line-header-bottom"></div>
     <section class="star-wars">
       <div class="crawl">
         <div class="title">
