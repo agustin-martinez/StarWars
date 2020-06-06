@@ -118,6 +118,7 @@ button {
 .btm-persons:hover {
   color: #afd5df;
   text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+  font-size: 2em;
 }
 
 .btm-planets {
@@ -140,6 +141,7 @@ button {
 .btm-planets:hover {
   color: #afd5df;
   text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+  font-size: 2em;
 }
 
 .btm-favourites {
@@ -179,6 +181,25 @@ li:hover,
   color: #afd5df;
   text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
   animation: miniGlow 1s infinite;
+  font-size: 2em;
+}
+
+.dropdown:hover .dropdown-content div:first-child {
+  animation: miniGlowReverse 1.5s;
+  transition: 0.4s ease-in;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content div:nth-child(2) {
+  animation: miniGlowReverse 3s;
+  transition: 0.4s ease-in;
+  opacity: 1;
+}
+
+.dropdown:hover .dropdown-content div:nth-child(3) {
+  animation: miniGlowReverse 4s;
+  transition: 0.4s ease-in;
+  opacity: 1;
 }
 
 li.dropdown {
@@ -208,7 +229,7 @@ li.dropdown {
   margin-top: 17px;
   margin-left: 25px;
   font-size: 18px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .dropdown-content :hover {
@@ -297,21 +318,31 @@ li.dropdown {
 
 @keyframes miniGlow {
   from {
+    text-shadow: 0 4 12px #afd5df, 0 -4 -12px #afd5df;
+  }
+
+  to {
+    text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+  }
+}
+
+@keyframes miniGlowReverse {
+  from {
     text-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
   }
 
   to {
-    text-shadow: 0 0 0px #fff, 0 0 0px #afd5df, 0 0 0px #afd5df;
+    text-shadow: 0 4 12px #afd5df, 0 -4 -12px #afd5df;
   }
 }
 
 @keyframes miniGlowBox {
   from {
-    box-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
+    box-shadow: 0 4 12px #afd5df, 0 -4 -12px #afd5df;
   }
 
   to {
-    box-shadow: 0 4 12px #fff, 0 -4 -12px #afd5df;
+    box-shadow: 0px 2px 8px #afd5df, 0px -2px 8px #afd5df;
   }
 }
 
@@ -347,9 +378,11 @@ li.dropdown {
   }
 }
 
-@media (max-width: 875px) {
+@media (max-width: 1105px) {
   .header-box {
     flex-direction: column;
+  }
+  .card-raid {
   }
 }
 
@@ -457,17 +490,19 @@ li.dropdown {
   background-color: rgba(0, 0, 0, 0.6);
 }
 .persons-box {
+  display: flex;
+  flex-direction: column;
   background-image: url(../src/assets/star-wars.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-origin: border-box;
   background-size: cover;
   height: 100vh;
+  padding-top: 300px;
 }
 .card-raid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 300px 200px 400px 575px;
 }
 
 .card-box {
