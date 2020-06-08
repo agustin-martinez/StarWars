@@ -13,7 +13,7 @@ const Header = ({ setScreenFromHeader }) => {
           alt="StarWars"
         ></img>
       </div>
-      <div className="line-header-bottom"></div>
+      <div className="line-header-top"></div>
       <div className="start-btm-box">
         <button
           className="btm-persons"
