@@ -3,18 +3,19 @@ import "../App.css";
 
 const Planets = () => (
   <div className="planets-box">
+    <input className="input-search" type="text" placeholder="Search" />
     <div className="card-raid">
       <section class="card-box">
         <div class="card-text">
           <div class="card-title">
-            <h3>Luke Skywalker</h3>
+            <h3>Luke Planets</h3>
           </div>
           <div className="card-info">
             <p>
-              <span>Homeworld:</span>Tatooine
+              <span>Homeworld: </span>Tatooine
             </p>
             <p>
-              <span>Birth date:</span>19BBY
+              <span>Birth date: </span>19BBY
             </p>
           </div>
         </div>
@@ -23,78 +24,14 @@ const Planets = () => (
       <section class="card-box">
         <div class="card-text">
           <div class="card-title">
-            <h3>Luke Skywalker</h3>
+            <h3>Luke Planets</h3>
           </div>
           <div className="card-info">
             <p>
-              <span>Homeworld:</span>Tatooine
+              <span>Homeworld: </span>Tatooine
             </p>
             <p>
-              <span>Birth date:</span>19BBY
-            </p>
-          </div>
-        </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
-      <section class="card-box">
-        <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Skywalker</h3>
-          </div>
-          <div className="card-info">
-            <p>
-              <span>Homeworld:</span>Tatooine
-            </p>
-            <p>
-              <span>Birth date:</span>19BBY
-            </p>
-          </div>
-        </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
-      <section class="card-box">
-        <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Skywalker</h3>
-          </div>
-          <div className="card-info">
-            <p>
-              <span>Homeworld:</span>Tatooine
-            </p>
-            <p>
-              <span>Birth date:</span>19BBY
-            </p>
-          </div>
-        </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
-      <section class="card-box">
-        <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Skywalker</h3>
-          </div>
-          <div className="card-info">
-            <p>
-              <span>Homeworld:</span>Tatooine
-            </p>
-            <p>
-              <span>Birth date:</span>19BBY
-            </p>
-          </div>
-        </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
-      <section class="card-box">
-        <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Skywalker</h3>
-          </div>
-          <div className="card-info">
-            <p>
-              <span>Homeworld:</span>Tatooine
-            </p>
-            <p>
-              <span>Birth date:</span>19BBY
+              <span>Birth date: </span>19BBY
             </p>
           </div>
         </div>

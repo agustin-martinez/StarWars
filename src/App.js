@@ -27,7 +27,7 @@ function App() {
       content = <Persons />;
       break;
     case PLANETS:
-      content = <Header />;
+      content = <Planets />;
       break;
     case FAVOURITES:
       content = <Persons />;

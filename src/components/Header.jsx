@@ -13,7 +13,7 @@ const Header = ({ setScreenFromHeader }) => {
           alt="StarWars"
         ></img>
       </div>
-      <div className="line-header-bottom"></div>
+      <div className="line-header-top"></div>
       <div className="start-btm-box">
         <button
           className="btm-persons"
@@ -21,7 +21,12 @@ const Header = ({ setScreenFromHeader }) => {
         >
           PERSONS
         </button>
-        <button className="btm-planets">PLANETS</button>
+        <button
+          className="btm-planets"
+          onClick={() => setScreenFromHeader("Planets")}
+        >
+          PLANETS
+        </button>
         <li className="dropdown">
           <button className="btm-favourites">FAVOURITES</button>
           <div className="dropdown-content">
