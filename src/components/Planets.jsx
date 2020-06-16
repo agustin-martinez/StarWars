@@ -1,44 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 
-const Planets = () => (
-  <div className="planets-box">
-    <input className="input-search" type="text" placeholder="Search" />
-    <div className="card-raid">
-      <section class="card-box">
+const Planets = (props) => {
+  const [filter, setFilter] = useState("");
+  function toSearch(event) {
+    setFilter(event.target.value);
+  }
+
+  const toFavourite = (planet) => {
+    let addToFavourites = {
+      name: planet.name,
+      diameter: planet.diameter,
+      population: planet.population,
+    };
+
+    props.addFavourite(addToFavourites);
+  };
+
+  let listWithplanets = props.items
+    .filter((item) => {
+      return (
+        item.name.toLowerCase().includes(filter.toLowerCase()) ||
+        item.diameter.toLowerCase().includes(filter.toLowerCase()) ||
+        item.population.toLowerCase().includes(filter.toLowerCase())
+      );
+    })
+    .map((planet, id) => (
+      <div key={id} className="card-box">
         <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Planets</h3>
+          <div className="card-title">
+            <h3>{planet.name}</h3>
           </div>
           <div className="card-info">
             <p>
-              <span>Homeworld: </span>Tatooine
+              <span>Diameter: </span>
+              {planet.diameter}
             </p>
             <p>
-              <span>Birth date: </span>19BBY
+              <span>Population: </span>
+              {planet.population}
             </p>
           </div>
+          <button className="card-btm" onClick={() => toFavourite(planet)}>
+            Add to favourites
+          </button>
         </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
-      <section class="card-box">
-        <div class="card-text">
-          <div class="card-title">
-            <h3>Luke Planets</h3>
-          </div>
-          <div className="card-info">
-            <p>
-              <span>Homeworld: </span>Tatooine
-            </p>
-            <p>
-              <span>Birth date: </span>19BBY
-            </p>
-          </div>
-        </div>
-        <button className="card-btm">Add to favourites</button>
-      </section>
+      </div>
+    ));
+
+  return (
+    <div className="App">
+      <div className="planets-box">
+        <input
+          className="input-search"
+          type="text"
+          placeholder="Search"
+          onKeyUp={toSearch}
+        />
+        <div className="card-raid">{listWithplanets}</div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Planets;

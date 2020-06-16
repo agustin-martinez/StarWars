@@ -30,13 +30,9 @@ const Header = ({ setScreenFromHeader }) => {
         <li className="dropdown">
           <button className="btm-favourites">FAVOURITES</button>
           <div className="dropdown-content">
-            <div onClick={() => setScreenFromHeader("Favourites-Persons")}>
-              Persons
-            </div>
-            <div onClick={() => setScreenFromHeader("Favourites-Planets")}>
-              Planets
-            </div>
-            <div onClick={() => setScreenFromHeader("All-Favorites")}>
+            <div onClick={() => setScreenFromHeader("FavPersons")}>Persons</div>
+            <div onClick={() => setScreenFromHeader("FavPlanets")}>Planets</div>
+            <div onClick={() => setScreenFromHeader("AllFavourites")}>
               All favourites
             </div>
           </div>
